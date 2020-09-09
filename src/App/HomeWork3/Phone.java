@@ -1,5 +1,5 @@
 package App.HomeWork3;
-
+import java.util.Scanner;
 //Создаем класс Phone
 public class Phone {
     int number;
@@ -8,17 +8,50 @@ public class Phone {
     //Имя звонящего
     String name = "Osho";
 
+    //Вводим данные по номеру/весу
+    static int getNumb() {
+        Scanner Num = new Scanner(System.in);
+        return Num.nextInt();
+    }
+    //Вводим данные по модели
+    static String getStr() {
+        Scanner Str = new Scanner(System.in);
+        return Str.nextLine();
+    }
+
     public static void main(String[] args) {
         //Создали экземпляры класса Phone
+        /*
         Phone Samsung = new Phone(1, "Galaxy", 4);
         Phone iPhone = new Phone(2, "ProMax", 5);
         Phone Nokia = new Phone(3, "3310");
-        Phone Xiaomi = new Phone();
+        */
+        Phone Samsung = new Phone();
+        Phone iPhone = new Phone();
+        Phone Nokia = new Phone();
+        //Вводим данные
+        System.out.print("Введите номер 1-го телефона: ");
+        Samsung.number = getNumb();
+        System.out.print("Введите его модель: ");
+        Samsung.model = getStr();
+        System.out.print("Вес: ");
+        Samsung.weight = getNumb();
+        System.out.print("Введите номер 2-го телефона: ");
+        iPhone.number = getNumb();
+        System.out.print("Введите его модель: ");
+        iPhone.model = getStr();
+        System.out.print("Вес: ");
+        iPhone.weight = getNumb();
+        System.out.print("Введите номер 3-го телефона: ");
+        Nokia.number = getNumb();
+        System.out.print("Введите его модель: ");
+        Nokia.model = getStr();
+        System.out.print("Вес: ");
+        Nokia.weight = getNumb();
         //Вывели экземпляры на консоль
-        System.out.println("Телефон - " + Samsung.model + "\n" + "Номер - " + Samsung.number + "\n" + "Вес смартфона - " + Samsung.weight);
-        System.out.println("Телефон - " + iPhone.model + "\n" + "Номер - " + iPhone.number + "\n" + "Вес смартфона - " + iPhone.weight);
-        System.out.println("Телефон - " + Nokia.model + "\n" + "Номер - " + Nokia.number + "\n" + "Вес смартфона - " + Nokia.weight);
-        System.out.println("Телефон - " + Xiaomi.model + "\n" + "Номер - " + Xiaomi.number + "\n" + "Вес смартфона - " + Xiaomi.weight);
+        System.out.println("Телефон - " + Samsung.model + " " + "Номер - " + Samsung.number + " " + "Вес смартфона - " + Samsung.weight);
+        System.out.println("Телефон - " + iPhone.model + " " + "Номер - " + iPhone.number + " " + "Вес смартфона - " + iPhone.weight);
+        System.out.println("Телефон - " + Nokia.model + " " + "Номер - " + Nokia.number + " " + "Вес смартфона - " + Nokia.weight);
         //Вызвали методы receiveCall и getNumber для всех экземпляров
         Samsung.getNumber();
         Samsung.receiveCall();
@@ -31,7 +64,7 @@ public class Phone {
         iPhone.receiveCall(iPhone.name, iPhone.number);
         Nokia.receiveCall(Nokia.name, Nokia.number);
         //Вызвали метод sendMessage
-        Xiaomi.sendMessage(Samsung.number, Xiaomi.number);
+        Nokia.sendMessage(Samsung.number, Nokia.number);
     }
 
     //Добавили метод receiveCall
@@ -39,7 +72,7 @@ public class Phone {
         System.out.println("Звонит абонент " + name);
     }
 
-    //Добавили метод getNymber
+    //Добавили метод getNumber
     public void getNumber() {
         System.out.println("Входящий вызов с номера " + number);
     }
@@ -58,7 +91,7 @@ public class Phone {
         model = myModel;
     }
 
-    //Консутор без параметров
+    //Конструктор без параметров
     public Phone() {
 
     }
