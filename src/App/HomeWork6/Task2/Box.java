@@ -8,7 +8,6 @@ public class Box<T> {
     public void add(T item) {
         if ((box.length == 0)) {
             Object[] result = new Object[box.length + 1];
-            System.arraycopy(box, 0, result, 0, box.length);
             result[box.length] = item;
             box = result;
         } else {
@@ -17,16 +16,12 @@ public class Box<T> {
                 System.arraycopy(box, 0, result, 0, box.length);
                 result[box.length] = item;
                 box = result;
-            } else {
-                System.out.println("Фрукты разные...");
             }
         }
     }
-
     public void print() {
         System.out.println(Arrays.toString(box));
     }
-
     public double getWeight() {
         double temp = 0;
         if (box.length == 0) {
@@ -43,10 +38,8 @@ public class Box<T> {
         }
         return temp;
     }
-
     public boolean compare(Box underBox) {
 
         return (this.getWeight() == underBox.getWeight());
     }
-
 }

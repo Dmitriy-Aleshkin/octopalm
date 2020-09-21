@@ -7,24 +7,17 @@ public class Main {
         Orange<String> or1 = new Orange<>("OrangeOne");
         Orange<String> or2 = new Orange<>("OrangeTwo");
         Orange<String> or3 = new Orange<>("OrangeThree");
-        Box box1 = new Box<>();
-        box1.add(app1);
-        box1.add(app2);
-        box1.add(or2);
-        Box box2 = new Box<>();
-        box2.add(or1);
-        box2.add(or2);
-        Box box3 = new Box();
-        box3.add(or3);
-        box3.add(or1);
-        box1.print();
-        box2.print();
-        box3.print();
-        System.out.println("Вес коробки:" + " " + box1.getWeight());
-        System.out.println("Вес коробки:" + " " + box2.getWeight());
-        System.out.println(box3.compare(box2));
-        box1.print();
-        box2.print();
-        box3.print();
+        Box PalletOne = new Box<>();
+        Box PalletTwo = new Box<>();
+        PalletOne.add(app1);
+        PalletOne.add(app2);
+        PalletTwo.add(or1);
+        PalletTwo.add(or2);
+        PalletTwo.add(or3);
+        PalletOne.getWeight();
+        PalletTwo.getWeight();
+        System.out.println("Вес паллеты: " + PalletOne.getWeight());
+        System.out.println("Вес паллеты: " + PalletTwo.getWeight());
+        System.out.println(PalletOne.compare(PalletTwo));
     }
 }
